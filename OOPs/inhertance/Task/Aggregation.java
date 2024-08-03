@@ -15,8 +15,48 @@ Requirements:
    - Calculate the average sales per store.
    - Find the store with the highest total sales.
 
-Example Usage:
+*/
+import java.time.LocalDate;
+class Sale{
+   private LocalDate localDate;
+   private int amount;
 
+   public Sale(LocalDate localDate,int amount){
+      this.localDate = localDate;
+      this.amount = amount;
+   }
+
+   public void display(){
+      System.out.println("The total sale of "+ localDate + " is :"  + amount);
+   }
+
+}
+class Store{
+   private String name ;
+   private Sale sale;
+
+   public Store(String name , Sale sale){
+      this.name = name;
+      this.sale = sale;
+   }
+
+   public void displayStoreDeital(){
+      System.out.println("The name of store  " + name);
+      sale.display();
+   }
+}
+public class Aggregation{
+   public static void main(String[] args) {
+       Sale sale = new Sale(LocalDate.of(2024, 07, 29), 50000);
+       Store store1 = new Store("store1", sale);
+
+       store1.displayStoreDeital();
+   }
+}
+
+
+/*Example Usage:
+expected output
 Store store1 = new Store();
 store1.addSale(new Sale(LocalDate.of(2023, 1, 1), 100.0));
 store1.addSale(new Sale(LocalDate.of(2023, 1, 2), 150.0));
@@ -72,8 +112,3 @@ System.out.println("Course with the highest average grade: " + student.getTopCou
 
 
 */
-public class Aggregation{
-    public static void main(String[] args) {
-        
-    }
-}

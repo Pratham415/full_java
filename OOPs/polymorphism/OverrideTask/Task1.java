@@ -10,7 +10,7 @@ class Calculator{
     }
 }
 class scintificCal extends Calculator{
-    @Override
+   
     public int add(int a,int b){
         return a+b;
     }
@@ -19,6 +19,7 @@ public class Task1 {
     public static void main(String[] args) {
         scintificCal sc = new scintificCal();
 
-        sc.add(13,15);
+        int a = sc.add(13,15);
+        System.out.println(a);
     }
 }
